@@ -77,7 +77,7 @@ class Submission:
     def wrap(env: CybORG) -> MultiAgentEnv:
         return EnterpriseMAE(env)
 
-submission = load_submission('/Users/rll249/Documents/CAGE/cage-4-playground/2_rounds/staging')
+submission = load_submission('/Users/rll249/Documents/CAGE/cage-4-playground/Submissions/2_rounds/staging')
 steps = 200
 sg = EnterpriseScenarioGenerator(blue_agent_class=SleepAgent, 
                                 green_agent_class=EnterpriseGreenAgent, 

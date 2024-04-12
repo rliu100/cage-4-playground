@@ -54,7 +54,7 @@ class Submission:
 
     # Use this function to define your agents.
     AGENTS: dict[str, BaseAgent] = {
-        f"blue_agent_{agent}": Agent(f'Agent{agent}', Policy.from_checkpoint(os.path.dirname(f'/Users/rll249/Documents/CAGE/cage-4-playground/Archive/staging/policies/Agent{agent}/'))) for agent in range(5)
+        f"blue_agent_{agent}": Agent(f'Agent{agent}', Policy.from_checkpoint(os.path.dirname(f'/Users/rll249/Documents/CAGE/cage-4-playground/Submissions/Archive/staging/policies/Agent{agent}/'))) for agent in range(5)
     }
 
     # Use this function to wrap CybORG with your custom wrapper(s).

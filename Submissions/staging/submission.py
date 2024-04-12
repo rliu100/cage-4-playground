@@ -38,7 +38,7 @@ class Submission:
         # f"blue_agent_{agent}": Agent(f'blue_agent_{agent}', pickle.load(open(os.path.dirname(f'/Users/rll249/Documents/CAGE/cage-4-playground/staging/policies/Agent{agent}/') + "/policy_state.pkl", 'rb'))) for agent in range(5)
         # Agent(pickle.load(os.path.dirname(f'/Users/rll249/Documents/CAGE/cage-4-playground/staging/policies/Agent{agent}/') + "/policy_state.pkl")) for agent in range(5)
         # f"blue_agent_{agent}": Agent(torch.load(os.path.dirname(f'/Users/rll249/Documents/CAGE/cage-4-playground/staging/policies/Agent{agent}/') + "/policy_state.pkl")) for agent in range(5)
-        f"blue_agent_{agent}": Agent(f'Agent{agent}', Policy.from_checkpoint(os.path.dirname(f'/Users/rll249/Documents/CAGE/cage-4-playground/staging/policies/Agent{agent}/'))) for agent in range(5)
+        f"blue_agent_{agent}": Agent(f'Agent{agent}', Policy.from_checkpoint(os.path.dirname(f'/Users/rll249/Documents/CAGE/cage-4-playground/Submissions/staging/policies/Agent{agent}/'))) for agent in range(5)
     }
 
     # Use this function to wrap CybORG with your custom wrapper(s).

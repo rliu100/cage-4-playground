@@ -1,2 +1,0 @@
-reward_mean: -1485
-reward_stdev: 811.7585848021565

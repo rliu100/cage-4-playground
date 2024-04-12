@@ -1,4 +1,0 @@
-CybORG v4.0, Scenario4
-Author: SUBMISSION NAME, Team: TEAM NAME, Technique: TECHNIQUE NAME
-Average reward is: -1485 with a standard deviation of 811.7585848021565
-Using agents {'blue_agent_0': Agent, 'blue_agent_1': Agent, 'blue_agent_2': Agent, 'blue_agent_3': Agent, 'blue_agent_4': Agent}
