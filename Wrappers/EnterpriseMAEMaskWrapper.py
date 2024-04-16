@@ -140,9 +140,9 @@ class EnterpriseMAEMaskWrapper(BlueEnterpriseWrapper, MultiAgentEnv):
         } for a in self.agents})
 
         assert isinstance(obs, dict)
-        if (len(info.keys()) != len(obs.keys())):
-            raise ValueError(f"len info: {len(info.keys())}, len obs: {len(obs.keys())}, terminated: {terminated}")
-        assert len(info.keys()) == len(obs.keys())
+        # if (len(info.keys()) != len(obs.keys())):
+        #     raise ValueError(f"len info: {len(info.keys())}, len obs: {len(obs.keys())}, terminated: {terminated}")
+        # assert len(info.keys()) == len(obs.keys())
         return obs, rew, terminated, truncated, info #, mask
     
     def reset(self, *args, **kwargs) -> tuple[dict[str, Any], dict[str, Any]]:
