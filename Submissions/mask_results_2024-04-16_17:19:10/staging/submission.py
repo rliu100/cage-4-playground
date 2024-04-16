@@ -15,7 +15,7 @@ from gymnasium.spaces import MultiDiscrete
 from ray.rllib.models import ModelCatalog
 
 from TorchActionMaskModel import TorchActionMaskModel
-from EnterpriseMAEMaskWrapper import EnterpriseMAEMaskWrapper
+from MaskWrapper import MaskWrapper
 
 # Import your custom agents here.
 # from __future__ import annotations
@@ -72,4 +72,4 @@ class Submission:
 
     # Use this function to wrap CybORG with your custom wrapper(s).
     def wrap(env: CybORG) -> MultiAgentEnv:
-        return EnterpriseMAEMaskWrapper(env)
+        return MaskWrapper(env)
