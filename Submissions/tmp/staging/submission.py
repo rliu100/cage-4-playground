@@ -16,7 +16,7 @@ from CybORG.Agents.Wrappers.EnterpriseMAE import EnterpriseMAE
 class Agent(BaseAgent):
     def __init__(self, name: str = None, model = None):
         super().__init__(name)
-        print("model: ", model)
+        # print("model: ", model)
         self.model = model
 
     def get_action(self, observation: dict, action_space: Space):

@@ -19,7 +19,7 @@ class Agent(BaseAgent):
         self.policy = model
 
     def get_action(self, observation: dict, action_space: Space):
-        print(">>>shape: ", observation.shape)
+        # print(">>>shape: ", observation.shape)
         return self.policy.compute_single_action(observation)
     
 class Submission:
