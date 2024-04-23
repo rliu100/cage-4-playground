@@ -1,6 +1,6 @@
 from CybORG import CybORG
 from CybORG.Simulator.Scenarios import EnterpriseScenarioGenerator
-from CybORG.Agents import SleepAgent, EnterpriseGreenAgent, DiscoveryFSRed, cc4BlueRandomAgent
+from CybORG.Agents import SleepAgent, EnterpriseGreenAgent, DiscoveryFSRed, cc4BlueRandomAgent, RandomAgent
 from CybORG.Agents.Wrappers.VisualiseRedExpansion import VisualiseRedExpansion
 from CybORG.Agents.SimpleAgents.FiniteStateRedAgent import FiniteStateRedAgent
 
@@ -21,9 +21,11 @@ from gymnasium.spaces import MultiDiscrete
 from inspect import signature
 
 from CybORG.Evaluation.evaluation import load_submission
+from ray.rllib.models import ModelCatalog
+from CustomRLLib import TorchActionMaskModel
 
 # Import your custom agents here.
-# from __future__ import annotations
+ModelCatalog.register_custom_model("torch_action_mask_model", TorchActionMaskModel)
 
 class Agent(BaseAgent):
     def __init__(self, name: str = None, policy = None):
@@ -70,7 +72,7 @@ class Submission:
 
     # Use this function to define your agents.
     AGENTS: dict[str, BaseAgent] = {
-        f"blue_agent_{agent}": Agent(f'Agent{agent}', Policy.from_checkpoint(os.path.dirname(f'/Users/rll249/Documents/CAGE/cage-4-playground/2_rounds/staging/policies/Agent{agent}/'))) for agent in range(5)
+        f"blue_agent_{agent}": Agent(f'Agent{agent}', Policy.from_checkpoint(os.path.dirname(f'/Users/rll249/Documents/CAGE/cage-4-playground/Submissions/2_rounds/staging/policies/Agent{agent}/'))) for agent in range(5)
     }
 
     # Use this function to wrap CybORG with your custom wrapper(s).
@@ -78,6 +80,7 @@ class Submission:
         return EnterpriseMAE(env)
 
 submission = load_submission('/Users/rll249/Documents/CAGE/cage-4-playground/Submissions/2_rounds/staging')
+
 steps = 200
 sg = EnterpriseScenarioGenerator(blue_agent_class=SleepAgent, 
                                 green_agent_class=EnterpriseGreenAgent, 
